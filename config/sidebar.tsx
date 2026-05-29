@@ -73,6 +73,10 @@ export const sidebarNav: SidebarSection[] = [
         href: '/docs/guides/diagram-image-style',
       },
       {
+        title: 'Offline Reading Export',
+        href: '/docs/guides/offline-reading',
+      },
+      {
         title: 'Internationalization',
         href: '/docs/guides/internationalization',
       },
