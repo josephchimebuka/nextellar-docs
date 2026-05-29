@@ -92,3 +92,37 @@ Create a **Documentation Feedback** category in [GitHub Discussions](https://git
 - Zero-result search rate decreases quarter over quarter
 
 ---
+
+## Privacy Considerations
+
+Documentation analytics must respect reader privacy and comply with common regulations (GDPR, CCPA) without requiring a cookie consent banner when possible.
+
+### Data minimization
+
+| Principle | Implementation |
+| --------- | -------------- |
+| No cookies by default | Use Plausible or Vercel Analytics (cookie-less) |
+| Aggregate only | Report page-level counts, never individual reader profiles |
+| Short retention | Delete raw event logs after 90 days; keep only aggregates |
+| No fingerprinting | Do not collect canvas, font, or hardware identifiers |
+| Opt-out respect | Honor `Do Not Track` and provide a `/privacy` page explaining data collection |
+
+### Consent for free-text feedback
+
+When a reader submits written feedback:
+
+- Do **not** require an email address
+- Display a notice: *"Your feedback may be posted publicly in GitHub Issues."*
+- Strip accidental PII (email patterns, API keys) before storing events server-side
+
+### Third-party processors
+
+If using Vercel Analytics or Plausible, list them in the site privacy policy with links to their respective data processing agreements. Avoid Google Analytics unless there is an explicit business need and consent flow.
+
+### Security
+
+- Store analytics credentials in environment variables (`PLAUSIBLE_DOMAIN`, etc.), never in committed config
+- Restrict dashboard access to maintainers
+- Do not log search queries containing wallet public keys or secrets
+
+---
