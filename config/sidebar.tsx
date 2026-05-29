@@ -47,6 +47,7 @@ export const sidebarNav: SidebarSection[] = [
       { title: 'Introduction', href: '/docs/getting-started/introduction' },
       { title: 'Installation', href: '/docs/getting-started/installation' },
       { title: 'Quick Start', href: '/docs/getting-started/quick-start' },
+      { title: 'FAQ', href: '/docs/getting-started/faq' },
     ],
   },
   {
@@ -74,6 +75,8 @@ export const sidebarNav: SidebarSection[] = [
       },
       { title: 'Deployment', href: '/docs/guides/deployment' },
       { title: 'Glossary', href: '/docs/guides/glossary' },
+      { title: 'MDX Custom Components', href: '/docs/guides/mdx-custom-components' },
+      { title: 'Link Validation', href: '/docs/guides/link-validation' },
     ],
   },
   {
@@ -145,6 +148,8 @@ export const sidebarNav: SidebarSection[] = [
       { title: 'Internationalization', href: '/docs/guides/internationalization' },
       { title: 'Deployment', href: '/docs/guides/deployment' },
       { title: 'Glossary', href: '/docs/guides/glossary' },
+      { title: 'MDX Custom Components', href: '/docs/guides/mdx-custom-components' },
+      { title: 'Link Validation', href: '/docs/guides/link-validation' },
     ],
   },
   {
