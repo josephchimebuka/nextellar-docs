@@ -9,59 +9,47 @@ MDX lets you embed React components directly in Markdown. Nextellar docs registe
 
 ## Available components
 
-| Component | Purpose |
-| --- | --- |
-| `Note` | Callout box for tips, warnings, and info |
-| `Tabs`, `TabsList`, `Tab`, `TabsContent` | Tabbed content panels |
-| `Steps`, `Step`, `StepTitle`, `StepContent` | Numbered step sequences |
-| `FolderTree`, `Folder`, `File` | Visual directory trees |
-| `Button` | Styled action button |
-| `Mermaid` | Render Mermaid diagrams |
-| `CodeTabs` | Syntax-highlighted code with language tabs |
-| `Dialog`, `DialogTrigger`, `DialogContent` | Modal dialog |
-| `Popover`, `PopoverTrigger`, `PopoverContent` | Floating popover |
-| `Select`, `SelectContent`, `SelectItem`, `SelectValue` | Dropdown select |
-| `Checkbox`, `Label`, `Input` | Form controls |
-| `Menu`, `MenuItem`, `MenuTrigger`, `PopMenu` | Dropdown menu |
+| Component                                              | Purpose                                    |
+| ------------------------------------------------------ | ------------------------------------------ |
+| `Note`                                                 | Callout box for tips, warnings, and info   |
+| `Tabs`, `TabsList`, `Tab`, `TabsContent`               | Tabbed content panels                      |
+| `Steps`, `Step`, `StepTitle`, `StepContent`            | Numbered step sequences                    |
+| `FolderTree`, `Folder`, `File`                         | Visual directory trees                     |
+| `Button`                                               | Styled action button                       |
+| `Mermaid`                                              | Render Mermaid diagrams                    |
+| `CodeTabs`                                             | Syntax-highlighted code with language tabs |
+| `Dialog`, `DialogTrigger`, `DialogContent`             | Modal dialog                               |
+| `Popover`, `PopoverTrigger`, `PopoverContent`          | Floating popover                           |
+| `Select`, `SelectContent`, `SelectItem`, `SelectValue` | Dropdown select                            |
+| `Checkbox`, `Label`, `Input`                           | Form controls                              |
+| `Menu`, `MenuItem`, `MenuTrigger`, `PopMenu`           | Dropdown menu                              |
 
 ## Note
 
 Use `Note` to highlight important information.
 
 ```mdx
-<Note>
-  Run `pnpm build:content` after adding any new MDX file.
-</Note>
+<Note>Run `pnpm build:content` after adding any new MDX file.</Note>
 ```
 
 **Renders as:**
 
-<Note>
-  Run `pnpm build:content` after adding any new MDX file.
-</Note>
+<Note>Run `pnpm build:content` after adding any new MDX file.</Note>
 
 ## Tabs
 
 Use `Tabs` to show alternative content side by side.
 
-```mdx
+````mdx
 <Tabs defaultValue="npm">
   <TabsList>
     <Tab value="npm">npm</Tab>
     <Tab value="pnpm">pnpm</Tab>
   </TabsList>
-  <TabsContent value="npm">
-    ```bash
-    npm install
-    ```
-  </TabsContent>
-  <TabsContent value="pnpm">
-    ```bash
-    pnpm install
-    ```
-  </TabsContent>
+  <TabsContent value="npm">```bash npm install ```</TabsContent>
+  <TabsContent value="pnpm">```bash pnpm install ```</TabsContent>
 </Tabs>
-```
+````
 
 ## Steps
 
@@ -88,10 +76,14 @@ Use `FolderTree` to illustrate project or file structures.
 <FolderTree>
   <Folder element="src" defaultOpen={true}>
     <Folder element="hooks">
-      <File><p>useStellarWallet.ts</p></File>
+      <File>
+        <p>useStellarWallet.ts</p>
+      </File>
     </Folder>
     <Folder element="components">
-      <File><p>WalletConnectButton.tsx</p></File>
+      <File>
+        <p>WalletConnectButton.tsx</p>
+      </File>
     </Folder>
   </Folder>
 </FolderTree>
@@ -102,10 +94,14 @@ Use `FolderTree` to illustrate project or file structures.
 <FolderTree>
   <Folder element="src" defaultOpen={true}>
     <Folder element="hooks">
-      <File><p>useStellarWallet.ts</p></File>
+      <File>
+        <p>useStellarWallet.ts</p>
+      </File>
     </Folder>
     <Folder element="components">
-      <File><p>WalletConnectButton.tsx</p></File>
+      <File>
+        <p>WalletConnectButton.tsx</p>
+      </File>
     </Folder>
   </Folder>
 </FolderTree>
@@ -129,8 +125,8 @@ Use `CodeTabs` to show the same snippet in multiple languages.
 ```mdx
 <CodeTabs
   tabs={{
-    tsx: { syntax: "const { address } = useStellarWallet();", language: "tsx" },
-    js:  { syntax: "const { address } = useStellarWallet();", language: "js" },
+    tsx: { syntax: 'const { address } = useStellarWallet();', language: 'tsx' },
+    js: { syntax: 'const { address } = useStellarWallet();', language: 'js' },
   }}
 />
 ```
