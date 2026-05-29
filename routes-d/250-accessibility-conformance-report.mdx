@@ -96,3 +96,25 @@ Documentation for UI components (`docs/components/*.mdx`) was checked for explic
 | Keyboard shortcuts | **Pass** | Documents Cmd/Ctrl+K shortcut for search dialog |
 
 ---
+
+## Findings and Remediations
+
+| ID | Area | Finding | Severity | Remediation | Status |
+| -- | ---- | ------- | -------- | ----------- | ------ |
+| A-01 | Headings | `docs/customization/toc.mdx` previously skipped from `h2` to `h4` | Medium | Promoted skipped heading to `h3` for sequential outline | **Fixed** |
+| A-02 | Images | Only one content image exists; alt text is descriptive | — | No change needed | **Pass** |
+| A-03 | Links | No "click here" or "read more" link text found in `docs/` | — | No change needed | **Pass** |
+| A-04 | Examples grid | Card links lack explicit `aria-label` attributes | Low | Add `aria-label` describing each example when grid is refactored | **Open** |
+| A-05 | Contrast | Color contrast governed by theme CSS, not MDX content | Info | Track in a separate theme audit; docs content is not the source | **Out of scope** |
+| A-06 | Components | `input.mdx`, `nav-menu.mdx`, and `connect-wallet-button.mdx` document accessibility patterns | — | Maintain when adding new component docs | **Pass** |
+| A-07 | Search | `SearchDialog` supports keyboard shortcut; focus trap behavior is in React component | Info | Verify focus return on close during UI QA | **Open** |
+| A-08 | Language | Root layout sets `lang="en"` on `<html>` | — | No change needed | **Pass** |
+
+### Remediation priority
+
+1. **High** — Heading hierarchy violations (A-01) — fixed
+2. **Medium** — Missing image alt text — none found
+3. **Low** — Enhanced ARIA labels on example cards (A-04)
+4. **Info** — Theme contrast and focus management (A-05, A-07) — track separately
+
+---
