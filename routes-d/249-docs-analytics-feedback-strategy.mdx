@@ -16,3 +16,34 @@ Working draft for issue #249 — design a complete docs analytics and feedback s
 The Nextellar documentation site needs a lightweight, privacy-respecting approach to understanding how readers use the docs and where they get stuck. This strategy proposes a small set of metrics, a reader feedback channel, and clear privacy boundaries — scoped entirely to documentation, with no changes to application runtime code.
 
 ---
+
+## Metrics to Track
+
+Focus on actionable signals that help maintainers prioritize documentation work. Avoid vanity metrics that do not inform content decisions.
+
+| Metric | What it measures | Why it matters |
+| ------ | ---------------- | -------------- |
+| **Page views** | Unique visits per docs page | Identifies high-traffic reference pages worth keeping current |
+| **Search queries** | Terms entered in the Cmd/Ctrl+K search dialog | Surfaces content gaps when readers search but find no match |
+| **Zero-result searches** | Queries that return no indexed page | Direct signal for missing or poorly titled pages |
+| **Outbound link clicks** | Clicks on external links (GitHub, Stellar docs) | Shows which external resources readers rely on |
+| **Time on page (median)** | How long readers stay on a page | Very short dwell times on long guides may indicate confusion |
+| **404 rate** | Requests to missing routes | Catches broken links and stale bookmarks early |
+| **Feedback submissions** | Thumbs up/down or free-text responses | Qualitative signal tied to specific pages |
+
+### Recommended tooling
+
+| Layer | Tool | Notes |
+| ----- | ---- | ----- |
+| Page analytics | [Plausible](https://plausible.io/) or [Vercel Web Analytics](https://vercel.com/docs/analytics) | Cookie-free, GDPR-friendly, minimal script footprint |
+| Search analytics | Custom event on `SearchDialog` selection | Log query + selected result slug; no PII |
+| Feedback | GitHub Discussions or a lightweight form | Route submissions to `nextellar-docs` issues |
+
+### What not to track
+
+- Wallet addresses, transaction hashes, or any on-chain identifiers
+- Full page scroll recordings or session replay
+- Personally identifiable information (email, IP stored long-term)
+- Cross-site tracking or third-party ad pixels
+
+---
