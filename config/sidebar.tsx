@@ -70,6 +70,10 @@ export const sidebarNav: SidebarSection[] = [
       { title: 'Add a Docs Page', href: '/docs/guides/add-docs-page' },
       { title: 'Search Experience', href: '/docs/guides/search' },
       {
+        title: 'Testing Docs Changes',
+        href: '/docs/guides/testing-docs-changes',
+      },
+      {
         title: 'Internationalization',
         href: '/docs/guides/internationalization',
       },
