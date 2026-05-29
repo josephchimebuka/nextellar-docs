@@ -158,6 +158,36 @@ nextellar doctor [options]
 | Soroban RPC    | No       | Reachability of the default testnet Soroban RPC endpoint |
 | Free memory    | Yes      | At least 1 GB of available RAM                           |
 
+**Examples:**
+
+```bash
+# Run environment diagnostics
+nextellar doctor
+
+# Output results as JSON (useful in CI pipelines)
+nextellar doctor --json
+```
+
+**Standard output:**
+
+```bash
+Nextellar Doctor
+
+✔ Node.js         v20.18.0 (>= 20.0.0 required)
+✔ npm             v10.8.2
+⚠ yarn            Not installed
+✔ pnpm            v9.15.4
+✔ Git             v2.47.0
+⚠ Rust            Not installed (needed for contract development)
+⚠ Stellar CLI     Not installed (needed for contract development)
+⚠ wasm32 target   Not installed
+✔ Horizon API     https://horizon-testnet.stellar.org (200)
+✔ Soroban RPC     https://soroban-testnet.stellar.org (200)
+✔ Free Memory (RAM) 4096 MB RAM free
+
+10 checks passed, 1 checks failed
+```
+
 ### nextellar deploy
 
 Validate and prepare your project for production deployment. This command checks that your Horizon and Soroban RPC endpoints are properly configured, and builds a optimized production bundle of your Stellar dApp.
