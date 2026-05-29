@@ -69,6 +69,19 @@ export const sidebarNav: SidebarSection[] = [
       { title: 'Contributing', href: '/docs/guides/contributing' },
       { title: 'Editor Setup', href: '/docs/guides/editor-setup' },
       { title: 'Add a Docs Page', href: '/docs/guides/add-docs-page' },
+      {
+        title: 'Navigation Configuration',
+        href: '/docs/guides/navigation-configuration',
+      },
+      {
+        title: 'Release Notes Workflow',
+        href: '/docs/guides/release-notes-workflow',
+      },
+      { title: 'Extending the CLI', href: '/docs/guides/extending-the-cli' },
+      {
+        title: 'Performance Budget',
+        href: '/docs/guides/performance-budget-guide',
+      },
       { title: 'Search Experience', href: '/docs/guides/search' },
       {
         title: 'Testing Docs Changes',
@@ -88,7 +101,10 @@ export const sidebarNav: SidebarSection[] = [
       },
       { title: 'Deployment', href: '/docs/guides/deployment' },
       { title: 'Glossary', href: '/docs/guides/glossary' },
-      { title: 'MDX Custom Components', href: '/docs/guides/mdx-custom-components' },
+      {
+        title: 'MDX Custom Components',
+        href: '/docs/guides/mdx-custom-components',
+      },
       { title: 'Link Validation', href: '/docs/guides/link-validation' },
     ],
   },
@@ -164,7 +180,10 @@ export const sidebarNav: SidebarSection[] = [
       },
       { title: 'Deployment', href: '/docs/guides/deployment' },
       { title: 'Glossary', href: '/docs/guides/glossary' },
-      { title: 'MDX Custom Components', href: '/docs/guides/mdx-custom-components' },
+      {
+        title: 'MDX Custom Components',
+        href: '/docs/guides/mdx-custom-components',
+      },
       { title: 'Link Validation', href: '/docs/guides/link-validation' },
     ],
   },
